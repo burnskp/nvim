@@ -13,16 +13,19 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.background = "light"
 
-require("options")
+require("config.options")
 
 require("lazy").setup({
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
+  install = {
+    missing = true,
+    colorscheme = { "catppuccin-latte" },
+  },
   spec = {
-    { import = "colorschemes" },
     { import = "plugins" },
   },
   checker = {
-    enabled = true,
-    frequency = 259200,
+    enabled = false,
   },
   performance = {
     rtp = {
@@ -38,4 +41,4 @@ require("lazy").setup({
   },
 })
 
-require("jsonpath")
+require("custom.jsonpath")

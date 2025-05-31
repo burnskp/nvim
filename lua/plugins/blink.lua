@@ -10,7 +10,7 @@ return {
     completion = { documentation = { auto_show = false } },
     signature = { enabled = true },
     sources = {
-      default = { 'copilot', 'avante', 'snippets', 'lsp', 'path', 'buffer' },
+      default = { 'lazydev', 'copilot', 'avante', 'snippets', 'lsp', 'path', 'buffer' },
       providers = {
         avante = {
           module = 'blink-cmp-avante',
@@ -24,8 +24,13 @@ return {
           score_offset = 100,
           async = true,
         },
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
+        },
       },
     },
   },
-  opts_extend = { "sources.default" }
 }
