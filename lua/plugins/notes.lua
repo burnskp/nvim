@@ -4,7 +4,7 @@ return {
     notesDir = "/data/notes/global",
     projectNotesDir = "/data/notes/projects",
   },
-  cmd = { "Notes", "NotesGrep", "LastNote" },
+  cmd = { "Notes", "NotesGrep", "LastNote", "ProjectNotes", "ProjectScratch" },
   keys = {
     {
       "<leader>nF",
@@ -43,8 +43,13 @@ return {
     },
     {
       "<leader>ns",
-      function() require("notes.commands").searchNotes("/data/notes", "files", 'float') end,
-      desc = "Search All Notes (Float)",
+      "<cmd>ProjectScratch float<CR>",
+      desc = "Open Project Scratch (Float)",
+    },
+    {
+      "<leader>nS",
+      "<cmd>ProjectScratch<CR>",
+      desc = "Open Project Scratch",
     },
     {
       "<leader>na",
