@@ -4,57 +4,20 @@ return {
     notesDir = "/data/notes/global",
     projectNotesDir = "/data/notes/projects",
   },
-  cmd = { "Notes", "NotesGrep", "LastNote", "ProjectNotes", "ProjectScratch" },
+  cmd = {"LastNote", "Notes", "NotesAll", "NotesAllGrep", "NotesGrep", "ProjectNote", "ProjectNotes", "ProjectNotesGrep"},
   keys = {
-    {
-      "<leader>nF",
-      "<cmd>Notes<CR>",
-      desc = "Find Notes"
-    },
-    {
-      "<leader>nf",
-      "<cmd>Notes float<CR>",
-      desc = "Find Notes (Float)",
-    },
-    {
-      "<leader>nG",
-      "<cmd>NotesGrep<CR>",
-      desc = "Search Notes Content",
-    },
-    {
-      "<leader>ng",
-      "<cmd>NotesGrep float<CR>",
-      desc = "Search Notes Content (Float)",
-    },
-    {
-      "<leader>nP",
-      "<cmd>ProjectNotes<CR>",
-      desc = "Search Project Notes",
-    },
-    {
-      "<leader>np",
-      "<cmd>ProjectNotes float<CR>",
-      desc = "Search Project Notes (Float)",
-    },
-    {
-      "<leader>nn",
-      "<cmd>LastNote float<CR>",
-      desc = "Open Last Note (Float)",
-    },
-    {
-      "<leader>ns",
-      "<cmd>ProjectScratch float<CR>",
-      desc = "Open Project Scratch (Float)",
-    },
-    {
-      "<leader>nS",
-      "<cmd>ProjectScratch<CR>",
-      desc = "Open Project Scratch",
-    },
-    {
-      "<leader>na",
-      function() require("notes.commands").searchNotes("/data/notes", "grep", 'float') end,
-      desc = "Grep All Notes (Float)",
-    },
-  }
+    { "<leader>na", "<cmd>NotesAllGrep float<CR>",        desc = "Grep All Notes (Float)" },
+    { "<leader>nA", "<cmd>NotesAllGrep <CR>",             desc = "Grep All Notes" },
+    { "<leader>nf", "<cmd>Notes float<CR>",               desc = "Find Notes (Float)" },
+    { "<leader>nF", "<cmd>Notes<CR>",                     desc = "Find Notes" },
+    { "<leader>ng", "<cmd>NotesGrep float<CR>",           desc = "Grep Notes (Float)" },
+    { "<leader>nG", "<cmd>NotesGrep<CR>",                 desc = "Grep Notes" },
+    { "<leader>nn", "<cmd>LastNote float<CR>",            desc = "Open Last Note (Float)" },
+    { "<leader>np", "<cmd>ProjectNotes float<CR>",        desc = "Find Project Notes (Float)" },
+    { "<leader>nP", "<cmd>ProjectNotes<CR>",              desc = "Find Project Notes" },
+    { "<leader>ns", "<cmd>ProjectNote scratch float<CR>", desc = "Project Note - Scratch (Float)" },
+    { "<leader>nS", "<cmd>ProjectNote scratch<CR>",       desc = "Grep Project NotNote - Scratch" },
+    { "<leader>nt", "<cmd>ProjectNote todo float<CR>",    desc = "Project Note - Todo (Float)" },
+    { "<leader>nT", "<cmd>ProjectNote todo<CR>",          desc = "Grep Project NotNote - Todo" },
+  },
 }
